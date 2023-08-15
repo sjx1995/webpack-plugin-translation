@@ -28,6 +28,35 @@ yarn add @sunly95/webpack-plugin-translation --dev
 
 ## Usage
 
+### webpack
+
+Configure the plugin in `webpack.config.js`, for detailed configuration parameters see [Configuration](#Configuration).
+
+```js
+// webpack.config.js
+
+// import plugin
+const AutoTranslation = require("@sunly95/webpack-plugin-translation");
+
+module.exports = {
+  plugins: [
+    // register plugin
+    new AutoTranslation({
+      id: secretId, // tencent cloud API secret ID
+      key: secretKey,  // tencent cloud API secret key
+      originLang: "en",  // origin language
+      targetLangs: [
+        { lang: "zh", filename: "zh-CN" },
+      ], // list of target languages
+      originFilePath: "./src/locales/en.json", // origin translation file
+      targetDirPath: "./src/locales"  // target translation files directory
+    })
+  ]
+}
+```
+
+### vue-cli
+
 Configure the plugin in `vue.config.js`, for detailed configuration parameters see [Configuration](#Configuration).
 
 ```js
@@ -42,11 +71,11 @@ module.exports = {
     new AutoTranslation({
       id: secretId, // tencent cloud API secret ID
       key: secretKey,  // tencent cloud API secret key
-      originLang: "zh",  // origin language
+      originLang: "en",  // origin language
       targetLangs: [
-        { lang: "en", filename: "en-US" },
+        { lang: "zh", filename: "zh-CN" },
       ], // list of target languages
-      originFilePath: "./src/locales/zh-CN.json", // origin translation file
+      originFilePath: "./src/locales/en.json", // origin translation file
       targetDirPath: "./src/locales"  // target translation files directory
     })
   );

@@ -28,6 +28,35 @@ yarn add @sunly95/webpack-plugin-translation --dev
 
 ## 使用
 
+### webpack
+
+在`webpack.config.js`中配置插件，传入的配置参数详情见[配置](#配置)
+
+```js
+// webpack.config.js
+
+// 引入插件
+const AutoTranslation = require("@sunly95/webpack-plugin-translation");
+
+module.exports = {
+  plugins: [
+    // 注册插件
+    new AutoTranslation({
+      id: secretId, // 腾讯云API密钥ID
+      key: secretKey,  // 腾讯云API密钥Key
+      originLang: "zh",  // 源语言
+      targetLangs: [
+        { lang: "en", filename: "en-US" },
+      ], // 要翻译的语言列表
+      originFilePath: "./src/locales/zh-CN.json", // 翻译原始文本文件，即vue-i18n的本地化文件
+      targetDirPath: "./src/locales"  // 翻译后的文件存放目录
+    })
+  ]
+}
+```
+
+### vue-cli
+
 在`vue.config.js`中配置插件，传入的配置参数详情见[配置](#配置)
 
 ```js
