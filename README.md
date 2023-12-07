@@ -2,6 +2,8 @@
 
 简体中文 | [English](./README_EN.md)
 
+💡 相同的翻译功能，但是unplugin：[sjx1995/unplugin-i18n-translation](https://github.com/sjx1995/unplugin-i18n-translation)
+
 ## 介绍
 
 一个自动翻译国际化文件的Webpack插件

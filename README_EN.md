@@ -2,6 +2,8 @@
 
 [简体中文](./README.md) | English
 
+💡 Same translation function, but unplugin: [sjx1995/unplugin-i18n-translation](https://github.com/sjx1995/unplugin-i18n-translation)
+
 ## Introduction
 
 A Webpack plugin for automatically translating internationalization files.
